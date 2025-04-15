@@ -183,7 +183,7 @@ if __name__ == "__main__":
 	elif os.path.isfile('last_ran.config'):
 		f = open('last_ran.config', 'r')
 		date_string = f.readline()
-		last_sync = datetime.strptime(date_string, date_format)
+		last_sync = datetime.strptime(date_string.strip(), date_format)
 	else:
 		last_sync = (datetime.now() - timedelta(days=30))
 
